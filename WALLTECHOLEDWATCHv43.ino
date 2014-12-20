@@ -115,9 +115,14 @@ byte B = 1;
 byte C = 1;
 byte D = 1;
 
-void setup()
-{ 
+// !! pick a coding style !!
+// mine is unconventional/unpopular maybe, but it is consistent
+// where ever you decide to put your brackets always use em and be consistent about it
+// Noticed you had/have alot of white space - giving the open bracket its own line might
+// be for you then  
 
+void setup()
+{
   GOFoled.init(0x3c);// initiate the screen at its address
   GOFoled.clearDisplay();
 
@@ -641,10 +646,11 @@ void loop() //would benefit some of this being broken out into functions !!
 
 // font displaying methods and other program methods
 
-void textNum(int x, int y, int n) //dude! for loop!
+void textNum(int x, int y, int n) 
 {// !! make an array of pointers to number images
  // this way they can be accessed as 0,1,2,3 and so on 
- // GOFoled.drawBitmap(x, y, PGM_READ_WHATEVER(&NUMBER_ARRAY[n]) <-- !!! one line !!!
+ // GOFoled.drawBitmap(x, y, PGM_READ_WHATEVER(&NUMBER_ARRAY[n], 72, 16, WHITE) <-- !!! one line !!!
+ // im sure the folks on the forums could help you creat a array like that, not my forte
   if(n == 1)       {GOFoled.drawBitmap(x, y, one, 72, 16, WHITE);}
   else if ( n == 2){GOFoled.drawBitmap(x, y, two, 72, 16, WHITE);}
   else if ( n == 3){GOFoled.drawBitmap(x, y, three, 72, 16, WHITE);}
@@ -666,7 +672,7 @@ void textNum(int x, int y, int n) //dude! for loop!
   else if ( n == 19){GOFoled.drawBitmap(x, y, nineteen, 128, 16, WHITE);}
 }
 
-void displayNum(int x, int y, int n) //dude! for loop!
+void displayNum(int x, int y, int n)
 {
   if(n == 0)     {GOFoled.drawBitmap(x, y, font0, 25, 28, WHITE);}
   else if(n == 1){GOFoled.drawBitmap(x, y, font1, 25, 28, WHITE);}
@@ -680,7 +686,7 @@ void displayNum(int x, int y, int n) //dude! for loop!
   else if(n == 9){GOFoled.drawBitmap(x, y, font9, 25, 28, WHITE);}
 }
 
-void blindNum(int x, int y, int n) //dude! for loop!
+void blindNum(int x, int y, int n)
 {
   if(n == 0)     {GOFoled.drawBitmap(x, y, blind0, 22, 64, WHITE);}
   else if(n == 1){GOFoled.drawBitmap(x, y, blind1, 22, 64, WHITE);}
@@ -694,7 +700,7 @@ void blindNum(int x, int y, int n) //dude! for loop!
   else if(n == 9){GOFoled.drawBitmap(x, y, blind9, 22, 64, WHITE);}
 }
 
-void displayBoxFont(int x, int y, int n) //dude! for loop!
+void displayBoxFont(int x, int y, int n)
 {
   if(n == 0)     {GOFoled.drawBitmap(x, y, box0, 30, 64, WHITE);}
   else if(n == 1){GOFoled.drawBitmap(x, y, box1, 30, 64, WHITE);}
